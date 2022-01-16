@@ -1,0 +1,452 @@
+.wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.side-nav{
+  margin-top: 10px;
+  border-radius:  0px 20px 0px 0px;
+  display: block;
+  background-color: #333;
+  width: 27%;
+  height:100%;
+}
+.tab-section{
+  background-color: #333;
+  width: 100%;
+  height: auto;
+  padding-bottom: 20px;
+}
+/* fixed side var on scroll */
+.fixed{
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.side-nav::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.retract{
+  border-radius:  0px 20px 0px 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: #212121;
+}
+.retract p{
+  margin-right: 100px;
+  color: #fff;
+}
+.createNew{
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+}
+.createNew img{
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.createNew h3{
+  color:#fff;
+  font-size: 24px;
+}
+
+/* Tabs */
+
+.tab{
+  width: 100%;
+  border-radius: 30px;
+  background-color: #055991;
+  margin-left: 40px;
+  cursor: pointer;
+  transition: 0.3s all;
+  position: relative;
+}
+
+.tab h1:hover{
+  font-size : 12px;
+  white-space : normal;
+  word-wrap :break-word;
+  padding-right: 50px;
+  line-height: 30px;
+}
+.tab:hover{
+    background-color: #032B5A;
+}
+.tab h1{
+  margin: 10px 0px;
+  height: 55px;
+  display: block;
+  transition: 0.1s all;
+  color:#fff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0px 40px 0px 20px;
+}
+.tab img{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  filter: invert(1);
+  position: absolute;
+  top:50%;
+  right: 10px;
+  transform: translateY(-50%);
+  margin-right: -10px;
+  padding: 8px;
+}
+.h2-notabs{
+  color: #fff;
+  width: 90%;
+  margin: 20px 5px 5px 20px;
+}
+.createNote:hover{
+  box-shadow: 0px 0px 7px 0px #333;
+}
+
+/* notes */
+.tabContent{
+  display:;
+  background-color: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: auto;
+  padding: 12px 16px;
+  border-radius: 30px;
+  width:93%;
+}
+.underTab-content{
+  display: inline-block;
+  background-color: #FAFAFA;
+  width: fit-content;
+  margin: 10px;
+  padding: 2px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+.underTab-content:hover{
+  background-color: #f1f1f1;
+}
+.h2-nonotes{
+  color: #333;
+  margin: 10px 5px 5px 20px;
+}
+.h2-nonotes span{
+  font-size: 12px;
+}
+.underTab-content h5{
+  font-size: 9px;
+  margin-top: -4px;
+}
+/* Modal popup*/
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.3s ease-in-out;
+  border: 1px solid #333;
+  border-radius: 10px;
+  z-index: 10000;
+  background-color: white;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 30px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.creating{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-header input{
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 1px solid #000;
+  font-family:'LuloCleanW01-One';
+  font-size: 13px;
+  width: 92%;
+}
+.modal-header .title {
+  font-family:'LuloCleanW01-OneBold';
+}
+
+.modal #close-button {
+  position: absolute;
+  top:10px;
+  right: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 24px;
+  padding: 5px;
+  font-weight: bold;
+}
+.modal #close-button:hover{
+  background-color: #ededed;
+}
+.modal #createBtn ,.modal #createNoteBtn{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 24px;
+  padding: 5px;
+  border: 2px solid #333;
+  box-shadow: 0px 4px 4px 0px #000;
+  position: relative;
+}
+.modal #createBtn:active ,.modal #createNoteBtn:active{
+  box-shadow: 0px 1px 4px 0px #000;
+  top: 4px;
+}
+/* will only appear for creating notes */
+.modal #createNoteBtn{
+  display: none;
+}
+
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  overflow: hidden;
+}
+
+
+/* text notes */
+.container{
+  position: absolute;
+  top:30px;
+  left: 32%;
+  bottom: 0;
+  width: 53%;
+  /* background-color: red; */
+}
+.text {
+  word-wrap: break-word;
+  height: 160px;
+	width:600px;
+	overflow:hidden;
+	background-color:#FFF;
+	color:#222;
+	font-family:Courier, monospace;
+	font-weight:normal;
+	font-size:24px;
+	resize:none;
+	line-height:40px;
+	padding-left:100px;
+	padding-right:100px;
+	padding-top:45px;
+	padding-bottom:34px;
+	background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+	background-repeat:repeat-y, repeat;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	-webkit-box-shadow: 0px 2px 14px #000;
+	box-shadow: 0px 2px 14px #000;
+	border-top:1px solid #FFF;
+	border-bottom:1px solid #FFF;
+}
+#scrollTop{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 16px;
+  padding: 5px;
+  margin: 50px;
+  color:#055991;
+  font-family: 'LuloCleanW01-OneBold';
+  border-bottom: 3px solid #055991;
+}
+#save, #delnote,.delnote{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 16px;
+  padding: 8px 15px;
+  margin: 50px 20px;
+  color:#fff;
+  font-family: 'LuloCleanW01-OneBold';
+  background-color: #032B5A;
+  transition: 0.1s all;
+}
+#delnote,.delnote{
+  background-color: #a60c0c;
+  margin: auto;
+}
+#save:hover{
+  background-color: #055991;
+}
+#save:active{
+  background-color: #056db3;
+}
+.withCheck {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: fit-content;
+}
+.withCheck img{
+width: 30px;
+margin-left: 60px;
+opacity: 0;
+transition: 0.4s all;
+}
+
+/* delete */
+.holder{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.delete{
+  margin-right: 100px;
+}
+.delete button{
+  font-family:  'LuloCleanW01-OneBold';
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  border: 2px solid #333;
+  font-size: 16px;
+  padding: 8px 15px;
+}
+/* modal delete */
+.deleteshow{
+  display:none;
+}
+.deletenote{
+  display:none;
+}
+.flex{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.flex a{
+    font-family:  'LuloCleanW01-OneBold';
+    font-size: 18px;
+    color:#111;
+    text-decoration: none;
+}
+.flex a:hover{
+  color:#055991;
+}
+/* driopdowb for tabdelete */
+.tabdelete{
+  display: none;
+  width: 100%;
+}
+.dropbtn {
+  background-color: #055991;
+  font-family:  'LuloCleanW01-One';
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  height: 200px;
+  overflow-y: scroll;
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover{
+  background-color: #f2f2f2;
+}
+.tabdelete{
+  display: block;
+  width: 100%;
+}
+
+/* footer */
+.footer{
+  background-color: #333;
+  height: 140px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+.footer .rightF{
+  padding: 30px 0px 20px 80px;
+  font-size: 16px;
+  color:#FAFAFA;
+}
+.footer .leftF {
+  display: flex;
+  flex-direction: column;
+    padding: 30px 80px 20px 0px ;
+}
+.footer .leftF a{
+  font-family: 'LuloCleanW01-OneBold';
+  font-size: 18px;
+  color: #055991;
+  text-decoration: none;
+}
+.footer .leftF a:hover{
+  color:#fafafa;
+}

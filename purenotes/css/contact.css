@@ -1,0 +1,65 @@
+.section {
+  width: 80%;
+  margin: 40px auto 0px auto;
+}
+
+.section h2 {
+  color: #79C9FF;
+  padding: 20px;
+}
+
+.body {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.email, .tele, .mobi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+  height: 300px;
+  text-align: center;
+  padding: 10px;
+}
+
+.email img, .tele img, .mobi img {
+  width: 200px;
+  height: 190px;
+  padding-bottom: 12px;
+}
+
+
+/* footer */
+
+.footer{
+  background-color: #333;
+  height: 140px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+.footer .rightF{
+  padding: 30px 0px 20px 80px;
+  font-size: 16px;
+  color:#FAFAFA;
+}
+.footer .leftF {
+  display: flex;
+  flex-direction: column;
+    padding: 30px 80px 20px 0px ;
+}
+.footer .leftF a{
+  font-family: 'LuloCleanW01-OneBold';
+  font-size: 18px;
+  color: #055991;
+  text-decoration: none;
+}
+.footer .leftF a:hover{
+  color:#fafafa;
+}

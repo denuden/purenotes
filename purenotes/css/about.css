@@ -1,0 +1,80 @@
+.header{
+  background-color: #333;
+  width: 100%;
+  color:#fafafa;
+  margin-top: 40px;
+  padding: 40px;
+}
+.header h1{
+  font-family: 'LuloCleanW01-OneBold';
+  margin-bottom: 30px;
+}
+
+.container{
+    margin-top: 10px;
+    width: 100%;
+    padding: 40px 0px;
+
+}
+.container h3{
+  font-family: 'LuloCleanW01-OneBold';
+  font-size: 26px;
+  padding-left: 40px;
+}
+.container span{
+    color:#055991;
+}
+.wrapper{
+  background-color: #FAFAFA;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.holder{
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.holder img{
+  width: 100%;
+}
+.holder h5{
+  margin-top: -10px;
+  color:#055991;
+  font-weight: bold;
+}
+
+
+/* footer */
+
+.footer{
+  background-color: #333;
+  height: 140px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+.footer .rightF{
+  padding: 30px 0px 20px 80px;
+  font-size: 16px;
+  color:#FAFAFA;
+}
+.footer .leftF {
+  display: flex;
+  flex-direction: column;
+    padding: 30px 80px 20px 0px ;
+}
+.footer .leftF a{
+  font-family: 'LuloCleanW01-OneBold';
+  font-size: 18px;
+  color: #055991;
+  text-decoration: none;
+}
+.footer .leftF a:hover{
+  color:#fafafa;
+}
